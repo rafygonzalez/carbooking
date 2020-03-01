@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.carbooking">
+  package="com.rocket.taxi">
 
     <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -24,7 +24,7 @@
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
   <meta-data
      android:name="com.google.android.geo.API_KEY"
-     android:value="AIzaSyBFpdMOluoz71jAgH3wuHVyk_CYOZymNog"/>
+     android:value="AIzaSyAPxkUgFsN8cpDlmONd8zrmielBB5eFrFc"/>
     </application>
 
 </manifest>

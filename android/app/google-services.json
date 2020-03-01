@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "156876564250",
+    "firebase_url": "https://rockettaxi-22bb9.firebaseio.com",
+    "project_id": "rockettaxi-22bb9",
+    "storage_bucket": "rockettaxi-22bb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156876564250:android:e3f17842257cd7692e2ea3",
+        "android_client_info": {
+          "package_name": "com.rocket.taxi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156876564250-8cstvt6m6parkac53kfb9ujj378q8vbj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rocket.taxi",
+            "certificate_hash": "aff6301f835f9d050fc5bc7174c12626b5d89795"
+          }
+        },
+        {
+          "client_id": "156876564250-6jqq8ufu18fr74is053id2bkfci57qg5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9sjdmqAxrOY_0SY5jCGL4RS3h4iukRGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156876564250-6jqq8ufu18fr74is053id2bkfci57qg5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

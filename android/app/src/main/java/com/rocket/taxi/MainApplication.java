@@ -1,4 +1,4 @@
-package com.carbooking;
+package com.rocket.taxi;
 
 import android.app.Application;
 import android.content.Context;

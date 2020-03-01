@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.carbooking",
+    package = "com.rocket.taxi",
 )
 
 android_resource(
     name = "res",
-    package = "com.carbooking",
+    package = "com.rocket.taxi",
     res = "src/main/res",
 )
 

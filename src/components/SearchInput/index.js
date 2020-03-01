@@ -4,7 +4,7 @@ import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete'
 import customStyle from './styles';
 
 const query = {
-  key: 'AIzaSyBFpdMOluoz71jAgH3wuHVyk_CYOZymNog',
+  key: 'AIzaSyAPxkUgFsN8cpDlmONd8zrmielBB5eFrFc',
   language: 'es',
 };
 

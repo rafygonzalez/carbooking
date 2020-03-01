@@ -11,7 +11,7 @@ import NavigationService from '../../services/NavigationService';
 import Colors from '../../Theme/Colors';
 import MainScreen from '~/containers/Main';
 import SplashScreen from '../SplashScreen/SplashScreen';
-
+import SignIn from '../Auth/Signin/index'
 // configuracao da Stack de navegacao
 // aplicas-se a todas as rotas
 const configureStack = {
