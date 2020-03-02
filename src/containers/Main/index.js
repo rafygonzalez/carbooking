@@ -18,27 +18,29 @@ const Main = () => {
   const [location, setLocation] = useState(null);
 
   useEffect(() => {
+    
     const options = {
       timeout: 2000,
       enableHighAccuracy: true,
       maximumAge: 1000,
     };
-    Geolocation.getCurrentPosition(
-      async ({coords: {latitude, longitude}}) => {
-        const response = await Geocoder.from({latitude, longitude});
-        const address = response.results[0].formatted_address;
-        const shortAddress = address.substring(0, address.indexOf(','));
+      Geolocation.watchPosition(
+        async ({coords: {latitude, longitude}}) => {
+          const response = await Geocoder.from({latitude, longitude});
+          const address = response.results[0].formatted_address;
+          const shortAddress = address.substring(0, address.indexOf(','));
+          console.log("Exec")
+          setRegion({
+            ...region,
+            latitude,
+            longitude,
+          });
+          setLocation(shortAddress);
+        },
+        error => Alert.alert(error.message),
+        options,
+      );
 
-        setRegion({
-          ...region,
-          latitude,
-          longitude,
-        });
-        setLocation(shortAddress);
-      },
-      error => Alert.alert(error.message),
-      options,
-    );
   }, []);
 
   const handleOnLocationSelected = (data, {geometry}) => {
