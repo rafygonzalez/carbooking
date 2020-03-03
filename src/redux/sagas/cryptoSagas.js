@@ -1,5 +1,5 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
-import { ExchangeService } from '../../services/ExchangeService';
+import {call, put, takeLatest} from 'redux-saga/effects';
+import {ExchangeService} from '../../services/ExchangeService';
 import {
   fetchCoinDataFailure,
   fetchCoinDataLoading,
@@ -24,6 +24,7 @@ function* fetchCoinData() {
   const coinData = yield call(ExchangeService.fetchCoinData);
 
   if (coinData) {
+    console.log(coinData);
     yield put(fetchCoinDataSuccess(coinData));
   } else {
     yield put(fetchCoinDataFailure('Erro na chamada da API.'));

@@ -14,6 +14,7 @@ let navigator;
  * @param  {ref} navigatorRef referencia da instancia de navegacao
  */
 function setTopLevelNavigator(navigatorRef) {
+  console.log(navigatorRef);
   navigator = navigatorRef;
 }
 
@@ -43,13 +44,13 @@ function navigateAndReset(routeName, params) {
   navigator.dispatch(
     CommonActions.reset({
       index: 0,
-      key: null,
-      actions: [
-        CommonActions.navigate({
-          name: routeName,
-          params: params,
-        }),
-      ],
+      routes: [{name: 'MainScreen'}],
+    }),
+  );
+  navigator.dispatch(
+    CommonActions.navigate({
+      name: routeName,
+      params: params,
     }),
   );
 }

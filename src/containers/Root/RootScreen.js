@@ -11,46 +11,74 @@ import NavigationService from '../../services/NavigationService';
 import Colors from '../../Theme/Colors';
 import MainScreen from '~/containers/Main';
 import SplashScreen from '../SplashScreen/SplashScreen';
-import SignIn from '../Auth/Signin/index'
+import SignIn from '../Auth/Signin/index';
 // configuracao da Stack de navegacao
 // aplicas-se a todas as rotas
 const configureStack = {
-  // Splash screen é exibida por default durante a execucao do startup() saga
-  // ver definicao no arquivo StartupSaga.js
-  initialRouteName: 'SplashScreen',
-  headerMode: 'none',
-  navigationOptions: {
-    translucent: 'true',
-    headerStyle: {
-      backgroundColor: Colors.defaultBackground,
-      elevation: 0,
-      paddingTop: 40,
+  MainScreen: {
+    // Splash screen é exibida por default durante a execucao do startup() saga
+    // ver definicao no arquivo StartupSaga.js
+    initialRouteName: 'MainScreen',
+    headerMode: 'none',
+    navigationOptions: {
+      translucent: 'true',
+      headerStyle: {
+        backgroundColor: Colors.defaultBackground,
+        elevation: 0,
+        paddingTop: 40,
+      },
+      headerTitleStyle: {
+        textAlign: 'center',
+        fontFamily: 'Geomanist-Medium',
+        alignSelf: 'center',
+      },
+      headerTintColor: Colors.headerTintColor,
     },
-    headerTitleStyle: {
-      textAlign: 'center',
-      fontFamily: 'Geomanist-Medium',
-      alignSelf: 'center',
+  },
+  SplashScreen: {
+    // Splash screen é exibida por default durante a execucao do startup() saga
+    // ver definicao no arquivo StartupSaga.js
+    initialRouteName: 'SplashScreen',
+    headerMode: 'none',
+    navigationOptions: {
+      translucent: 'true',
+      headerStyle: {
+        backgroundColor: Colors.defaultBackground,
+        elevation: 0,
+        paddingTop: 40,
+      },
+      headerTitleStyle: {
+        textAlign: 'center',
+        fontFamily: 'Geomanist-Medium',
+        alignSelf: 'center',
+      },
+      headerTintColor: Colors.headerTintColor,
     },
-    headerTintColor: Colors.headerTintColor,
   },
 };
 
 const Stack = createStackNavigator();
 function App(props) {
-  const navigationRef = React.createRef();
   const dispatch = useDispatch();
-
+  useEffect(() => {
+    console.log('Run');
+    dispatch(startup());
+  }, []);
   return (
     <NavigationContainer
-      ref={navigationRef}
-      onStateChange={state => {
-        NavigationService.setTopLevelNavigator(navigationRef.current);
+      ref={navigationRef => {
+        NavigationService.setTopLevelNavigator(navigationRef);
       }}>
       <Stack.Navigator initialRouteName="MainScreen">
         <Stack.Screen
+          name="SplashScreen"
+          component={SplashScreen}
+          options={configureStack.SplashScreen}
+        />
+        <Stack.Screen
           name="MainScreen"
           component={MainScreen}
-          options={configureStack.navigationOptions}
+          options={configureStack.MainScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

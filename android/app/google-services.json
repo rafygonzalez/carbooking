@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "156876564250-c075o3v7qu6di8u64tuphh4ssnefqoc0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rocket.taxi",
+            "certificate_hash": "37c746c377e46b18378f3884699f5d42e8a9c87c"
+          }
+        },
+        {
           "client_id": "156876564250-8cstvt6m6parkac53kfb9ujj378q8vbj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
