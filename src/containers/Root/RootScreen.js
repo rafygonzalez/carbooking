@@ -61,7 +61,6 @@ const Stack = createStackNavigator();
 function App(props) {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log('Run');
     dispatch(startup());
   }, []);
   return (
