@@ -1,5 +1,5 @@
 import React from 'react';
-import {Provider as PaperProvider} from 'react-native-paper';
+import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/lib/integration/react';
 import RootScreen from './containers/Root/RootScreen';
@@ -14,7 +14,7 @@ const {store, persistor} = configureStore(rootReducer, rootSaga);
 console.disableYellowBox = true; // Debug Only - yellow box
 
 // react-native-paper theme configuration
-const DefaultTheme = {};
+
 const theme = {
   ...DefaultTheme,
   colors: {

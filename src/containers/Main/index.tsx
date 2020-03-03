@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import {Alert} from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
-import Geocoder from 'react-native-geocoding';
-import Map from '~/components/Map';
+import GeoCoder from 'react-native-geocoding';
+import Map from 'components/Map';
 
-Geocoder.init('AIzaSyAPxkUgFsN8cpDlmONd8zrmielBB5eFrFc');
+var geo: any = GeoCoder
+
 
 const Main = () => {
+  geo.init('AIzaSyAPxkUgFsN8cpDlmONd8zrmielBB5eFrFc',{language:"es"})
   const [region, setRegion] = useState({
     latitude: 0,
     longitude: 0,
@@ -25,7 +27,7 @@ const Main = () => {
     };
     Geolocation.getCurrentPosition(
       async ({coords: {latitude, longitude}}) => {
-        const response = await Geocoder.from({latitude, longitude});
+        const response = await geo.from({latitude, longitude});
         const address = response.results[0].formatted_address;
         const shortAddress = address.substring(0, address.indexOf(','));
 

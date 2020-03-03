@@ -1,16 +1,16 @@
-module.exports = function babelConfig(api) {
-  const plugins = [
-    ['babel-plugin-styled-components', {pure: true}],
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    'babel-plugin-styled-components',
     [
-      'babel-plugin-root-import',
+      'module-resolver',
       {
-        rootPathSuffix: 'src',
-        rootPathPrefix: '~',
+        root: ['./src'],
+        extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
+        alias: {
+          'components/*': ['./components/'],
+        },
       },
     ],
-  ];
-  const presets = ['module:metro-react-native-babel-preset'];
-  api.cache(true);
-
-  return {plugins, presets};
+  ],
 };

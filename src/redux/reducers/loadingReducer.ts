@@ -5,11 +5,17 @@
  *
  */
 
-const INITIAL_STATE = {
+import { Action } from "redux";
+
+export interface InitialState {
+  loading:Boolean
+}
+
+export const initialState: InitialState = {
   loading: false,
 };
 
-const loadingReducer = (state = INITIAL_STATE, action) => {
+const loadingReducer = (state = initialState, action:Action) => {
   const { type } = action;
   const matches = /(.*)_(REQUEST|LOADING|SUCCESS|FAILURE)/.exec(type);
 

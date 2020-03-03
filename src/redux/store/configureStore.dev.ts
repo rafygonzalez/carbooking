@@ -7,6 +7,11 @@ import AsyncStorage from '@react-native-community/async-storage';
 import createSagaMiddleware from 'redux-saga';
 
 // define Redux Dev Tools
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 /**
